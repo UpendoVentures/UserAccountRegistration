@@ -16,7 +16,7 @@ build/
 [Oo]bj/
 
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
-!packages/*/build/
+#!packages/*/build/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -59,6 +59,8 @@ ipch/
 *.vsp
 *.vspx
 
+.vs/
+
 # Guidance Automation Toolkit
 *.gpState
 
@@ -98,7 +100,8 @@ publish/
 
 # NuGet Packages Directory
 ## TODO: If you have NuGet Package Restore enabled, uncomment the next line
-#packages/
+[Pp]ackages/*
+![Pp]ackages/*.zip
 
 # Windows Azure Build Output
 csx
@@ -149,16 +152,13 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
-*.zip
 *.dll
 *.pdb
-obj/Release/Connect.Modules.AccountRegistration.xml
-obj/Release/Connect_AccountRegistration.vbproj.FileListAbsolute.txt
+obj/Release/Connect.Modules.AccountManagement.xml
+obj/Release/Connect_AccountManagement.vbproj.FileListAbsolute.txt
 *.cache
-Resources.zip
-Resources.zip
+#*.zip
 *.dll
-*.pdb
-obj/Release/Connect.Modules.AccountRegistration.xml
-*.cache
+Resources.zip
 Resources.zip.manifest
+Templates/DNN-Connect
