@@ -56,19 +56,19 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             ProcessFormTemplate(ref argplhControls, GetTemplate(ModuleTheme, Libraries.UserManagement.Constants.TemplateName_Form, CurrentLocale, false), null);
             plhRegister = argplhControls;
             Button btnUpdate = (Button)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_UpdateButton);
-            if (btnUpdate is object)
+            if (btnUpdate != null)
             {
                 btnUpdate.Click += btnUpdate_Click;
             }
 
             Button btnLogin = (Button)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_LoginButton);
-            if (btnLogin is object)
+            if (btnLogin != null)
             {
                 btnLogin.Click += btnLogin_Click;
             }
 
             Button btnLostPassword = (Button)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_LostPasswordButton);
-            if (btnLostPassword is object)
+            if (btnLostPassword != null)
             {
                 btnLostPassword.Click += btnLostPassword_Click;
             }
@@ -80,7 +80,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             bool blnIsValid = true;
             string strResultCode = "";
             var checkControl = FindControlRecursive(plhRegister, plhRegister.ID + "_ReCaptchaPanel");
-            if (checkControl is object)
+            if (checkControl != null)
             {
                 blnHasCaptchaControl = true;
                 blnIsValid = false;
@@ -171,7 +171,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             TextBox txtUsername = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_UsernameForLogin);
             TextBox txtPassword = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_PasswordForLogin);
             CheckBox chkRemember = (CheckBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_RememberForLogin);
-            if (txtUsername is object && txtPassword is object)
+            if (txtUsername != null && txtPassword != null)
             {
                 var loginStatus = default(UserLoginStatus);
                 var objUser = UserController.ValidateUser(PortalId, txtUsername.Text, txtPassword.Text, "", PortalSettings.PortalName, Request.UserHostAddress, ref loginStatus);
@@ -190,13 +190,13 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                     case UserLoginStatus.LOGIN_SUCCESS:
                         {
                             bool blnPersistent = false;
-                            if (chkRemember is object)
+                            if (chkRemember != null)
                             {
                                 blnPersistent = chkRemember.Checked;
                             }
 
                             UserController.UserLogin(PortalId, objUser, PortalSettings.PortalName, Request.UserHostAddress, blnPersistent);
-                            if (Request.QueryString["ReturnURL"] is object)
+                            if (Request.QueryString["ReturnURL"] != null)
                             {
                                 Response.Redirect(Server.UrlDecode(Request.QueryString["ReturnURL"]), true);
                             }
@@ -242,7 +242,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             bool blnUpdatePassword = false;
             bool blnUpdateEmail = false;
             TextBox txtUsername = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Username);
-            blnUpdateUsername = txtUsername is object;
+            blnUpdateUsername = txtUsername != null;
             if (blnUpdateUsername)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Username, plhRegister))
@@ -261,7 +261,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtEmail = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Email);
-            blnUpdateEmail = txtEmail is object;
+            blnUpdateEmail = txtEmail != null;
             if (blnUpdateEmail)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Email, plhRegister))
@@ -281,7 +281,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
 
             TextBox txtPassword = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Password1);
             TextBox txtPassword2 = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Password2);
-            blnUpdatePassword = txtPassword is object && txtPassword2 is object;
+            blnUpdatePassword = txtPassword != null && txtPassword2 != null;
             if (blnUpdatePassword)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Password1, plhRegister))
@@ -314,7 +314,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtPasswordQuestion = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_PasswordQuestion);
-            bool blnUpdatePasswordQuestion = txtPasswordQuestion is object;
+            bool blnUpdatePasswordQuestion = txtPasswordQuestion != null;
             if (blnUpdatePasswordQuestion)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_PasswordQuestion, plhRegister))
@@ -333,7 +333,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtPasswordAnswer = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_PasswordAnswer);
-            bool blnUpdatePasswordAnswer = txtPasswordAnswer is object;
+            bool blnUpdatePasswordAnswer = txtPasswordAnswer != null;
             if (blnUpdatePasswordAnswer)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_PasswordAnswer, plhRegister))
@@ -352,7 +352,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtFirstName = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Firstname);
-            blnUpdateFirstname = txtFirstName is object;
+            blnUpdateFirstname = txtFirstName != null;
             if (blnUpdateFirstname)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Firstname, plhRegister))
@@ -371,7 +371,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtLastName = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Lastname);
-            blnUpdateLastname = txtLastName is object;
+            blnUpdateLastname = txtLastName != null;
             if (blnUpdateLastname)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Lastname, plhRegister))
@@ -401,7 +401,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             TextBox txtDisplayName = (TextBox)FindControlRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_Displayname);
-            blnUpdateDisplayname = txtDisplayName is object;
+            blnUpdateDisplayname = txtDisplayName != null;
             if (blnUpdateDisplayname)
             {
                 if (!IsValidUserAttribute(Libraries.UserManagement.Constants.User_Displayname, plhRegister))
@@ -425,7 +425,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                 try
                 {
                     var prop = ProfileController.GetPropertyDefinitionByName(PortalId, itemProp.Substring(2)); // itemprop comes in the form U:Propertyname or P:Propertyname
-                    if (prop is object)
+                    if (prop != null)
                     {
                         Control argobjControl21 = plhRegister;
                         if (!IsValidProperty(null, prop, ref argobjControl21))
@@ -685,7 +685,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                     objInterface = Activator.CreateInstance(strAssembly, strClass).Unwrap();
                 }
 
-                if (objInterface is object)
+                if (objInterface != null)
                 {
                     bool localValidateRegistration()
                     {
@@ -864,7 +864,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
 
             bool blnAddMembership = false;
             CheckBox chkTest = (CheckBox)FindMembershipControlsRecursive(plhRegister, plhRegister.ID + "_" + Libraries.UserManagement.Constants.ControlId_RoleMembership);
-            if (chkTest is object)
+            if (chkTest != null)
             {
                 // at least on role membership checkbox found. Now lookup roles that could match
                 var rc = new RoleController();
@@ -880,7 +880,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                         blnPending = true;
                     }
 
-                    if (chkRole is object)
+                    if (chkRole != null)
                     {
                         if (blnPending)
                         {
@@ -947,7 +947,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                     objInterface = Activator.CreateInstance(strAssembly, strClass).Unwrap();
                 }
 
-                if (objInterface is object)
+                if (objInterface != null)
                 {
                     var argServer = Server;
                     var argResponse = Response;
@@ -957,7 +957,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
 
             // the following might not be processed if the interfaces manipulate the current response!
-            if (Request.QueryString["ReturnURL"] is object)
+            if (Request.QueryString["ReturnURL"] != null)
             {
                 Response.Redirect(Server.UrlDecode(Request.QueryString["ReturnURL"]), true);
             }
