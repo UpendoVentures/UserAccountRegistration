@@ -13,7 +13,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._drpThemes">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.drpThemes">
             <summary>
             drpThemes control.
             </summary>
@@ -22,7 +22,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._cmdCopySelected">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.cmdCopySelected">
             <summary>
             cmdCopySelected control.
             </summary>
@@ -31,7 +31,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._cmdDeleteSelected">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.cmdDeleteSelected">
             <summary>
             cmdDeleteSelected control.
             </summary>
@@ -58,7 +58,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._drpLocales">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.drpLocales">
             <summary>
             drpLocales control.
             </summary>
@@ -211,7 +211,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._cmdUpdate">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.cmdUpdate">
             <summary>
             cmdUpdate control.
             </summary>
@@ -220,7 +220,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._cmdUpdateExit">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.cmdUpdateExit">
             <summary>
             cmdUpdateExit control.
             </summary>
@@ -229,7 +229,7 @@
             To modify move field declaration from designer file to code-behind file.
             </remarks>
         </member>
-        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates._cmdCancel">
+        <member name="F:Connect.Modules.UserManagement.AccountRegistration.Templates.cmdCancel">
             <summary>
             cmdCancel control.
             </summary>

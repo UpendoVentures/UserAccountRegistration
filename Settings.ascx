@@ -1,7 +1,6 @@
-<%@ Control Language="vb" AutoEventWireup="false" Inherits="Connect.Modules.UserManagement.AccountRegistration.Settings" Codebehind="Settings.ascx.vb" %>
+<%@ Control Language="c#" AutoEventWireup="true" Inherits="Connect.Modules.UserManagement.AccountRegistration.Settings" Codebehind="Settings.ascx.cs" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <%@ Register TagName="label" TagPrefix="dnn" Src="~/controls/labelcontrol.ascx" %>
-
 
 <div class="dnnFormItem">    
     <dnn:Label ID="lblUsernameMode" runat="server" Text="Username Mode:"></dnn:Label>

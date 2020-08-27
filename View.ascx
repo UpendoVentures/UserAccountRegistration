@@ -1,4 +1,4 @@
-<%@ Control Language="vb" AutoEventWireup="false" Inherits="Connect.Modules.UserManagement.AccountRegistration.View" Codebehind="View.ascx.vb" %>                      
+<%@ Control Language="c#" AutoEventWireup="true" Inherits="Connect.Modules.UserManagement.AccountRegistration.View" Codebehind="View.ascx.cs" %>                      
         
 <div class="connect_registerform">
 
@@ -12,8 +12,3 @@
     <asp:PlaceHolder ID="plhRegister" runat="server"></asp:PlaceHolder>   
         
 </div>
-            
-         
-
-
-
