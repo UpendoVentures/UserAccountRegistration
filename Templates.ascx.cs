@@ -68,12 +68,12 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
         }
 
-        private void drpThemes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void drpThemes_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindSelectedTheme();
         }
 
-        private void cmdUpdate_Click(object sender, EventArgs e)
+        protected void cmdUpdate_Click(object sender, EventArgs e)
         {
             bool blnSucess = false;
             SaveTemplates(ref blnSucess);
@@ -83,7 +83,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
         }
 
-        private void cmdUpdateExit_Click(object sender, EventArgs e)
+        protected void cmdUpdateExit_Click(object sender, EventArgs e)
         {
             bool blnSucess = false;
             SaveTemplates(ref blnSucess);
@@ -95,7 +95,7 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
         }
 
-        private void cmdDeleteSelected_Click(object sender, EventArgs e)
+        protected void cmdDeleteSelected_Click(object sender, EventArgs e)
         {
             try
             {
@@ -107,17 +107,17 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
         }
 
-        private void cmdCancel_Click(object sender, EventArgs e)
+        protected void cmdCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL());
         }
 
-        private void drpLocales_SelectedIndexChanged(object sender, EventArgs e)
+        protected void drpLocales_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindSelectedTheme();
         }
 
-        private void cmdCopySelected_Click(object sender, EventArgs e)
+        protected void cmdCopySelected_Click(object sender, EventArgs e)
         {
             pnlTemplateName.Visible = true;
         }

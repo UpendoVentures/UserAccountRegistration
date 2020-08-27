@@ -32,8 +32,6 @@ namespace Connect.Modules.UserManagement.AccountRegistration
 {
     public partial class Settings : DotNetNuke.Entities.Modules.ModuleSettingsBase
     {
-
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public override void LoadSettings()
         {
             try
@@ -139,8 +137,5 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             drpNotifyRole.DataBind();
             drpNotifyRole.Items.Insert(0, new ListItem("---", "-1"));
         }
-
-
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     }
 }

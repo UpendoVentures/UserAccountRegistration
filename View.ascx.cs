@@ -161,8 +161,6 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             plhRegister = (PlaceHolder)argContainer;
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         private void HandleLostPassword()
         {
             Response.Redirect(DotNetNuke.Common.Globals.NavigateURL(TabId, "", "ctl=SendPassword"));
@@ -1070,9 +1068,6 @@ namespace Connect.Modules.UserManagement.AccountRegistration
             }
         }
 
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
-        /* TODO ERROR: Skipped RegionDirectiveTrivia */
         public DotNetNuke.Entities.Modules.Actions.ModuleActionCollection ModuleActions
         {
             get
@@ -1082,7 +1077,5 @@ namespace Connect.Modules.UserManagement.AccountRegistration
                 return Actions;
             }
         }
-
-        /* TODO ERROR: Skipped EndRegionDirectiveTrivia */
     }
 }
