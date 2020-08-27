@@ -14,6 +14,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(ProjectDir)**\*.vb</DefaultItemExcludes>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" Condition="Exists('$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets')" />
   <PropertyGroup>
@@ -21,8 +23,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8C863196-4C19-4117-9DE0-55DA8EBE7ADB}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ProjectGuid>{3EA2B0FD-8041-0EE6-1FB8-9FA4EC294E7B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <RootNamespace>
     </RootNamespace>
@@ -63,6 +65,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="DotNetNuke">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\_References\DNN\$(DnnVersion)\DotNetNuke.dll</HintPath>
@@ -93,6 +96,16 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.Mobile" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_References\DNN\$(DeprecatedDnnVersion)\Telerik.Web.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_References\DNN\$(DeprecatedDnnVersion)\Telerik.Web.UI.Skins.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -116,25 +129,29 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.vb" />
-    <Compile Include="Templates.ascx.designer.vb">
+    <Compile Include="Components\FeatureController.cs" />
+    <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
+    <Compile Include="My Project\MyNamespace.Static.2.Designer.cs" />
+    <Compile Include="My Project\MyNamespace.Static.3.Designer.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Templates.ascx.designer.cs">
       <DependentUpon>Templates.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Templates.ascx.vb">
+    <Compile Include="Templates.ascx.cs">
       <DependentUpon>Templates.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Settings.ascx.designer.vb">
+    <Compile Include="Settings.ascx.designer.cs">
       <DependentUpon>Settings.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Settings.ascx.vb">
+    <Compile Include="Settings.ascx.cs">
       <DependentUpon>Settings.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="View.ascx.designer.vb">
+    <Compile Include="View.ascx.designer.cs">
       <DependentUpon>View.ascx</DependentUpon>
     </Compile>
-    <Compile Include="View.ascx.vb">
+    <Compile Include="View.ascx.cs">
       <DependentUpon>View.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -150,6 +167,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connect_AccountRegistration.dnn" />
+    <Content Include="images\error.png" />
+    <Content Include="images\icnModule.png" />
+    <Content Include="images\required.png" />
+    <Content Include="images\success.png" />
     <Content Include="Templates.ascx" />
     <Content Include="Templates\Default\Email.Admin.txt" />
     <Content Include="Templates\Default\Email.User.Private.txt" />
@@ -161,8 +182,6 @@
     <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Documentation\Documentation.css" />
-    <Content Include="Documentation\Documentation.html" />
     <Content Include="module.css" />
     <Content Include="Settings.ascx" />
     <Content Include="Templates\Default\Form.txt" />
@@ -170,17 +189,14 @@
     <Content Include="ReleaseNotes.txt" />
     <Content Include="License.txt" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="images\" />
-    <Folder Include="My Project\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UserAccountLibrary\Connect_Users.vbproj">
+    <ProjectReference Include="..\UserAccountLibrary\Connect_Users.csproj">
       <Project>{4F9B447A-D262-439A-822E-34849356966E}</Project>
       <Name>Connect_Users</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
